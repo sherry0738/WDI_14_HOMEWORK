@@ -1,0 +1,91 @@
+body {
+  
+  margin: 0;
+}
+  
+h1 {
+  font-size: 45px;
+  color: lightgrey;
+  font-weight: 800; 
+  display: inline-block; 
+  margin: 0 0 5px 180px;
+  
+
+}
+
+/*main {
+  width: 850px;
+  margin: 35px auto;
+}*/
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  color: grey;
+  letter-spacing: 1px;
+  font-weight: 600;    
+  font-size: 20px;
+  display: inline-block;
+}
+
+p {
+  font-family: "Raleway",sans-serif;
+  color: grey;
+  line-height: 26px;
+  font-size: 18px;
+}
+
+.newarrival{
+  width: 960px;
+  margin: 0 0 0 180px;
+}
+
+.collection {
+  margin: 0 0 0 180px;
+    width: 960px;
+}
+
+.date {
+  color: blue;
+  font-size: 18px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;   
+}
+
+p {
+   line-height: 26px;
+   font-size: 18px;
+   text-decoration: none;
+   letter-spacing: 1px;
+   font-weight: 600;
+}
+
+a {
+   margin: 0 20px;
+   color: blue; 
+   text-decoration: none;
+}
+
+div {
+    margin: 0 auto;
+  	/*border-bottom: 2px solid transparent;*/
+}
+ 
+.adbrand {
+  margin: 0 0 0 180px;
+	  width: 980px;
+    
+}
+
+.adbrandimg {
+  border: 5.5px;
+  border-style: solid;
+  border-color: lightgrey;
+}
+
+.copyright {
+  float: left;
+  font-family: "Raleway", sans-serif;
+  margin: 0 0 0 180px;
+}
+
