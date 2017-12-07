@@ -1,0 +1,71 @@
+/*div {	
+}*/
+
+div.smallBoxes {
+	border: 3px solid black;
+	width: 300px;
+    height: 65px;
+    float: left;
+    margin: 30px;
+}
+
+img {
+    width: 100px;
+    float: left;
+}
+
+#logoBox {
+	background-color: white;
+    border-style: hidden;
+	  
+}
+
+div#titleBox {
+	background-color: white;
+    border: 1px solid white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+    font-size:20pt;
+    text-transform:uppercase
+}
+
+div.bigBoxes {
+    border: 3px solid black;
+    width: 300px;
+    height: 300px;   
+    float: left;
+    margin: 50px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 15px;
+    
+}
+div#savingsBox {
+    background-color: red;
+    text-align:center;
+  }
+
+div#checkingBox {
+	background-color: grey;
+    text-align: center;
+  }
+p {
+    font-size: 10px;
+  };
+span.balanceNum {
+    font-size: 150px;
+}
+
+.savingAccEnteredAmount
+{
+    background-color: lightgreen;
+    height: 40px;
+    width: 220px;
+}
+button {
+    margin: 20px;
+}
