@@ -1,0 +1,16 @@
+
+html body {
+	height: 100%;
+}
+
+body {
+	background-color: mistyrose;
+	font-family: arial;
+}
+
+/*.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}*/
