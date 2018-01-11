@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="movie_page_main">
+		<div class="title"><%= @movie["Title"] %>(<%= @movie["Year"] %>)</div>
+		<div class="poster_and_info">
+			<div><img class="movie_poster" src="<%= @movie["Poster"] %>"></div>
+			<div class="aside">
+				<ul class="movie_info">
+					<li>Director: <%= @movie["Director"] %></li>
+					<li>Writer: <%= @movie["Writer"] %></li>
+					<li>Actors: <%= @movie["Actors"] %></li>
+					<li>Genre: <%= @movie["Genre"] %></li>
+					<li>Country: <%= @movie["Country"] %></li>
+					<li>Language: <%= @movie["Language"] %></li>
+					<li>Released: <%= @movie["Released"] %></li>
+					<li>Runtime: <%= @movie["Runtime"] %></li>
+					<li>Rated: <%= @movie["Rated"] %></li>
+					<li>Imdb Rating: <%= @movie["imdbRating"] %></li> 
+					<li>Production: <%= @movie["Production"] %></li>
+					<li>Box office: <%= @movie["BoxOffice"] %></li>
+					<li>Website: <%= @movie["Website"] %></li>
+				</ul>
+				<button class="watch_list">+ Add to Watchlist</button>
+			</div>
+		</div>
+	</div>
+</div>

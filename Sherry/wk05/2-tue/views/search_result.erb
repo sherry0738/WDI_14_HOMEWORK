@@ -1,0 +1,12 @@
+<h1>.</h1>
+ 
+<% @movie.each do |movie| %>
+	<p> 
+		<a href="/search?movie_name=<%= movie['Title'] %>">
+		<%= movie['Title'] %>
+		</a>
+	</p>
+<% end %>
+
+
+			

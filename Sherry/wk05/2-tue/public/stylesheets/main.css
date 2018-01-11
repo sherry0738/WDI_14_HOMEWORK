@@ -1,0 +1,183 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background: url('https://i.ytimg.com/vi/mM8jPNe9G28/maxresdefault.jpg');
+	background-size: cover;
+}
+header { 
+      color: darkgray;
+      padding: 80px;
+}
+.nav {
+	  display: inline;
+	  font-family: 'Lobster', cursive;
+      font-size: 110px;
+}
+.menu {
+	display: block;
+	justify-content: flex-end;	
+	text-decoration: none;
+	font-family: 'Lobster', cursive;
+	letter-spacing: 3px;
+    padding: 10px;
+    margin-top: 10px;
+}
+a {
+	color: #cccccc;
+}
+.menu li {
+	font-size: 100px;
+	color: lightgray;
+    padding: 0px 10px 0px 10px;
+    list-style: none;
+    display: inline;
+    flex-direction: row;
+    justify-content: space-around; 	
+}
+.container {
+	/*background-color: darkgray;*/
+	display: flex;
+	width: 90%;
+	padding: 100px;
+	/*padding-left: 30px;*/
+	background-color: white;
+	margin-right: 60px;
+	margin-left: 250px;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+.movie_input {
+	font-weight: 100px;
+	padding-bottom: 100px;
+	/*border: 1px solid black;*/
+}
+input {
+	height: 150px;
+    width: 1500px;
+    margin: 0 0;
+    font-size: 100px;
+}
+button {
+	font-size: 100px;
+}
+.lastest_movie {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	
+	padding: 100px 0;
+	padding-bottom: 15px;
+}
+.whats_on {
+	background-color: #ffffff;
+	font-size: 80px;
+	margin-bottom: 10px;	
+}
+.all_4_posters {
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-around;
+	align-items: center;
+}
+.lastest_m1, .lastest_m2, .lastest_m3, .lastest_m4 {
+	display: flex;
+	flex-direction: column;
+	font-size: 75px;
+}
+.lastest_movie_poster {
+	width: 650px;
+	height: 900px;
+	justify-content: space-between;
+	align-items:center;
+}
+.stars {
+	width: 500px;
+	height: 80px;
+}
+
+footer {
+	display: ruby-base-container;
+	justify-content:space-between;
+ 	text-transform: uppercase;
+ 	padding: 0 20px;
+ 	/*background-color: lightgray;*/
+ 	color: darkgray;
+ 	font-size: 50px;
+ 	letter-spacing: .08em;
+ 	font-weight: 500;
+ 	align-items: flex-end;
+}
+.copyright {
+ 	float: left;
+ 	font-family: "Raleway", sans-serif;
+}
+.message {
+ 	float: right;
+ 	font-family: "Raleway", sans-serif;
+}
+.clearfix:after {
+ 	visibility: hidden;
+ 	display: block;
+ 	content: " ";
+ 	clear: both;
+ 	height: 0;
+ 	font-size: 0;
+
+}
+ .name {
+ 	color: #F15B31;
+ 	font-weight: 500;
+}
+.movie_page_main {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+.title {
+	font-family: "Raleway", sans-serif;
+	font-size: 100px;
+	margin-bottom: 90px;
+	padding-bottom: 150px;
+}
+.poster_and_info {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+}
+.movie_poster {
+	display: flex;
+	width: 1300px;
+	height: 1800px;
+	margin: 20px 200px 20px 100px;
+}
+.aside {
+	display: inline-block;
+	font-size: 80px;
+	padding: 0;
+	background-color: lightblue;
+}
+.movie_info {
+	font-size: 75px;
+	list-style: none;
+	background-color: orange;
+	height: 1600px;
+	width: 1300px;
+	margin: 60px 200px;
+}
+.about_page_main {
+	display: flex;
+	flex-direction: column;
+}
+h2 {
+	font-size: 120px;
+	margin: 0;
+}
+.about {
+	font-size: 90px;
+	margin-top: 0;
+}
