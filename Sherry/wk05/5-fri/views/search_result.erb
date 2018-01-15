@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="main">
+<h1>List of movies you searched for</h1>
+ 	
+<% @movies.each do |movie| %>
+
+	<a href="/movie?imdbID=<%= movie['imdbID'] %>"><%= movie['Title'] %> (<%= movie['Year'] %>)
+	</a>
+	<img src="<%= movie['Poster'] %>" alt="">
+<% end %>
+	</div>
+</div>
+
+
+
+
+			

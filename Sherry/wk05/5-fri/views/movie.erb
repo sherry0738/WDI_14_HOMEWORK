@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="movie_page_main">
+		<div class="title"><%= @movie["Title"] %>(<%= @movie["Year"] %>)</div>
+		<div class="poster_and_info">
+			<div><img class="movie_poster" src="<%= @movie["Poster"] %>"></div>
+			<div class="aside">
+				<ul class="movie_info">
+					<li>Imdb Rating: <%= @movie["imdbRating"] %></li> 
+					
+					<li>imdbID: <%= @movie["imdbID"] %></li>
+					
+					<li>Plot: <%= @movie["Plot"] %></li>
+					
+					<li>Source: <%= @movie["Source"] %></li>
+					
+				</ul>
+				<button class="watch_list">+ Add to Watchlist</button>
+			</div>
+		</div>
+	</div>
+</div>
