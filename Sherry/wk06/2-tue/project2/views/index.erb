@@ -1,9 +1,5 @@
-
-
-
-
 <div class="container">
-	<div class="index_page_main">
+	<div class="index_main">
 		
 		<% if session[:user_id] == nil %>
 
@@ -11,29 +7,28 @@
 				<h2>Log in</h2>
 				<form action="/session" method="post">			
 					<input type="text" name="email" placeholder="Email">			
-					<input type="password" name="password" placeholder="Password">
-					<button onclick="failedLogin()">Log in</button>
-					
-				</form>
+					<input type="password" name="password" placeholder="Password">	
+					<button onclick="failedLogin()" class="login_btn">Log in</button>
+				</form>									
 				<p>Want to post best photographer? <a href="/signup">Sign up</a></p> 
-			</div>
-			<div><a href="/photographers/new">Post a new photographer</a></div>
+			</div>			
 		<% end %>
-
-		
-		<div class="newest_list">
-			<h2>Newest posts</h2>
-
+	<div class="postnew_link" onclick="longinWarning()"><a href="/photographers/new">Post a new photographer</a></div>
+	<% if session[:user_id] == nil %>
+	<script> function longinWarning() {
+	    						alert("Please login first.");
+							}</script>
+	<% end %>
+		<div class="recent_list">
+			<h2>Most Recent</h2>
 			<% @photographers.each do |photographer| %>
 				<p>
 					<a href="/photographers/<%= photographer.id %>">
 					<%= photographer.name %>
 					</a>
-
 				</p>
 			<% end %>
 		</div>
-
 	</div>
 </div>
 

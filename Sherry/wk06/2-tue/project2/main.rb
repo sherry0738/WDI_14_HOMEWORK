@@ -8,11 +8,9 @@ require_relative 'models/user'
 enable :sessions
 
 helpers do 
-
 	def current_user
 		User.find_by(id: session[:user_id])
 	end
-
 	def loggen_in?
 		!!current_user		
 	end
@@ -22,23 +20,32 @@ get '/' do
 	@photographers = Photographer.all 
 	erb :index
 end
-
 get '/about' do
 	erb :about
 end
-
+# get '/recent' do
+# 	@photographers = Photographer.all 
+# 	erb :recent
+# end
+# get '/photographers/top4' do
+# 	erb :recent
+# end
 get '/search' do
 	@photographers = Photographer.where("name LIKE ?", "%#{params[:photographer_name]}%")
 		# Foo.where("bar LIKE ?", "%#{query}%")
   	# conn = PG.connect(dbname: 'ratemyphotographer')
  	# resp = conn.excu()
-	# conn.close
+	# conn.closese
 	# end
 	erb :search_result
 end
 
 get '/photographers/new' do
+	 if session[:user_id] 	
 	erb :new
+	 else 
+	 	redirect '/'
+	 end
 end
 
 # add a new photographer to photographers table
@@ -46,18 +53,19 @@ post '/photographers' do
 	photographer = Photographer.new
 	photographer.name = params[:name]
 	photographer.image_url = params[:image_url]
+	photographer.phone = params[:phone]
+	photographer.address = params[:address]
+	photographer.website = params[:website]
 	photographer.created_by = session[:user_id]
+	photographer.created_at = params[:created_at]
+	photographer.rate=0
 	photographer.save
 	redirect '/'
 end
 
 
 get '/photographers/:id' do
-
 	@photographer = Photographer.find(params[:id])
-	
-	# ?????   photographer.created_by = params[:]
-	@user = User.find(params[:id])
 	@comments = Comment.where(photographer_id: params[:id])
 	erb :show
 end
@@ -74,6 +82,8 @@ put '/photographers/:id' do
 	photographer.phone = params[:phone]
 	photographer.address = params[:address]
 	photographer.website = params[:website]
+	photographer.created_by = session[:user_id]
+	photographer.created_at = params[:created_at]
 	photographer.save
 	redirect '/photographers/'+ photographer.id.to_s
 end
@@ -86,6 +96,7 @@ post '/comments' do
 	comment.created_at = params[:created_at]
 	comment.rate = params[:rate]
 	comment.save
+	
 	comments = Comment.where(photographer_id: params[:photographer_id])
 	total = 0
 	comments.each do |comment|
@@ -96,15 +107,6 @@ post '/comments' do
 	photographer = Photographer.find(params[:photographer_id])
 	photographer.rate = avg
 	photographer.save
-	#loop through all rate in all comments
-#get average
-# get photographer
-#set p.rate=averga
-#save p
-
-	
-
-	# @comment_by = Comment.where(created_by: params[:id])
 	redirect "/photographers/#{comment.photographer_id}" 
 end
 
@@ -150,7 +152,7 @@ post '/session' do
 		session[:user_id] = user.id 
 		redirect '/' 
 	else
-		session[:user_id]=nil
+		session[:user_id] = nil
 		redirect '/' 
 	end
 end
