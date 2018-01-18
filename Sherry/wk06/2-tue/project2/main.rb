@@ -57,7 +57,7 @@ get '/photographers/:id' do
 	@photographer = Photographer.find(params[:id])
 	
 	# ?????   photographer.created_by = params[:]
-	
+	@user = User.find(params[:id])
 	@comments = Comment.where(photographer_id: params[:id])
 	erb :show
 end
