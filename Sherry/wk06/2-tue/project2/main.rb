@@ -28,18 +28,12 @@ get '/about' do
 end
 
 get '/search' do
-	@photographers = Photographer.where(name: params[:photographer_name])
-		
+	@photographers = Photographer.where("name LIKE ?", "%#{params[:photographer_name]}%")
+		# Foo.where("bar LIKE ?", "%#{query}%")
   	# conn = PG.connect(dbname: 'ratemyphotographer')
  	# resp = conn.excu()
 	# conn.close
-
-	# @photographers.each do |photographer|
-	# 	photographer = Photographer.New 
-		
-	# 	Photographer.where(name: @photographer_title)
-	# end	
-
+	# end
 	erb :search_result
 end
 
@@ -52,6 +46,7 @@ post '/photographers' do
 	photographer = Photographer.new
 	photographer.name = params[:name]
 	photographer.image_url = params[:image_url]
+	photographer.created_by = session[:user_id]
 	photographer.save
 	redirect '/'
 end
@@ -89,14 +84,32 @@ post '/comments' do
 	comment.photographer_id = params[:photographer_id]
 	comment.created_by = session[:user_id]
 	comment.created_at = params[:created_at]
+	comment.rate = params[:rate]
 	comment.save
-	@comments = Comment.where(photographer_id: params[:id])
+	comments = Comment.where(photographer_id: params[:photographer_id])
+	total = 0
+	comments.each do |comment|
+		total += comment.rate 
+	end
+	avg = total / comments.count
+
+	photographer = Photographer.find(params[:photographer_id])
+	photographer.rate = avg
+	photographer.save
+	#loop through all rate in all comments
+#get average
+# get photographer
+#set p.rate=averga
+#save p
+
+	
+
 	# @comment_by = Comment.where(created_by: params[:id])
 	redirect "/photographers/#{comment.photographer_id}" 
 end
 
 post '/rate' do
-	
+
 	redirect "/photographers/#{comment.photographer_id}"
 end
 

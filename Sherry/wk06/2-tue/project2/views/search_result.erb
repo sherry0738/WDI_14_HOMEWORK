@@ -3,15 +3,15 @@
 
 <h1>List of photographers you searched for:</h1>
 <div class="container">
-
+	<ul>
 	<% @photographers.each do |photographer| %>
-		<p>
-			<a href="">
+		<li>
 			<%= photographer.name %>
-			</a>
-		</p>
+			<a href="/photographers/<%= photographer.id %>"></a>
+		</li>				
+		
 	<% end %>
-	
+	</ul>
 </div>
 
 

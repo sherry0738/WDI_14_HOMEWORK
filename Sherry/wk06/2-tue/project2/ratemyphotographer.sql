@@ -23,6 +23,7 @@ CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
 	content VARCHAR(500) NOT NULL,
 	photographer_id INTEGER NOT NULL,
+	rate INTEGER NOT NULL,
 	created_by INTEGER,
 	created_at TIMESTAMP,
 	FOREIGN KEY (created_by) REFERENCES users (id) ON DELETE RESTRICT,
