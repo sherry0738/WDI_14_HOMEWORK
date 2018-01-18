@@ -6,8 +6,8 @@
 	<ul>
 	<% @photographers.each do |photographer| %>
 		<li>
-			<%= photographer.name %>
-			<a href="/photographers/<%= photographer.id %>"></a>
+			
+			<a href="/photographers/<%= photographer.id %>"><%= photographer.name %></a>
 		</li>				
 		
 	<% end %>

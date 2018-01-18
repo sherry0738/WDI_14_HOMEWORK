@@ -7,22 +7,25 @@
 	<p>website: <%= @photographer.website %></p>
 </div>
 
-<% if session[:user_id] %>
-	<form action="/photographers/<%= @photographer.id %>" method="post">
-		<input type="hidden" name="_method" value="delete">
-		<button>Delete</button>	
-	</form>
-	<a href="/photographers/<%= @photographer.id %>/edit">Edit</a>
-	<form action="/comments" method="post">
-		<div>
-			<p>Rate this photographer(1-10)</p>
-			<input type="text" name="rate">
-			<p>Add comments</p>	
-			<input type="hidden" name="photographer_id" value="<%= @photographer.id %>">  		
-			<textarea name="content" id="" cols="30" rows="10"></textarea>
-			<button>Save</button>
-		</div>
-	</form>		
+<% if session[:user_id]  %>
+	<% if session[:user_id] == @photographer.created_by %>
+		<form action="/photographers/<%= @photographer.id %>" method="post">
+			<input type="hidden" name="_method" value="delete">
+			<button>Delete</button>	
+		</form>
+		<a href="/photographers/<%= @photographer.id %>/edit">Edit</a>
+	<% else %>
+		<form action="/comments" method="post">
+			<div>
+				<p>Rate this photographer(1-10)</p>
+				<input type="text" name="rate">
+				<p>Add comments</p>	
+				<input type="hidden" name="photographer_id" value="<%= @photographer.id %>">  		
+				<textarea name="content" id="" cols="30" rows="10"></textarea>
+				<button>Save</button>
+			</div>
+		</form>		
+	<% end %>
 <% end %>
 
 <p>Comments :</p>

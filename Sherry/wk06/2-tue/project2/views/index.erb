@@ -7,22 +7,23 @@
 		
 		<% if session[:user_id] == nil %>
 
-		<div class="login">
-			<h2>log in</h2>
-			<form action="/session" method="post">			
-				<input type="text" name="email" placeholder="Email">			
-				<input type="password" name="password" placeholder="Password">
-				<button onclick="failedLogin()">login</button>
-				<script> function failedLogin() {
-    						alert("Login failed. Try again.");
-						}</script>
-			</form>
-			<p>Don't  have  an  account ? <a href="/signup">Sign up</a></p> 
-		</div>
-
+			<div class="login">
+				<h2>Log in</h2>
+				<form action="/session" method="post">			
+					<input type="text" name="email" placeholder="Email">			
+					<input type="password" name="password" placeholder="Password">
+					<button onclick="failedLogin()">Log in</button>
+					
+				</form>
+				<p>Want to post best photographer? <a href="/signup">Sign up</a></p> 
+			</div>
+			<div><a href="/photographers/new">Post a new photographer</a></div>
 		<% end %>
+
+		
 		<div class="newest_list">
-			<h2>Newest posts<a href="/photographers/new">Post a new photographer</a></h2>
+			<h2>Newest posts</h2>
+
 			<% @photographers.each do |photographer| %>
 				<p>
 					<a href="/photographers/<%= photographer.id %>">

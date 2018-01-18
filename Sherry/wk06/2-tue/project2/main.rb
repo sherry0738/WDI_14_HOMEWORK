@@ -150,6 +150,7 @@ post '/session' do
 		session[:user_id] = user.id 
 		redirect '/' 
 	else
+		session[:user_id]=nil
 		redirect '/' 
 	end
 end
