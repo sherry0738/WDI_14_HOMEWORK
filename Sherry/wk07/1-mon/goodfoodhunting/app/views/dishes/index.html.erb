@@ -1,0 +1,8 @@
+<h2>Post Recent:</h2>
+
+<% @dishes.each do |dish| %>
+	<p>
+		<a href="/dishes/<%= dish.id %>"><%= dish.name %></a>
+	</p>
+
+<% end %>

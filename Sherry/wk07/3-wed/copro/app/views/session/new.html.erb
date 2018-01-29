@@ -1,0 +1,17 @@
+
+<div class="container">
+	<div class="signup_main">
+		<h2>Sign up</h2>
+		<form action="/session" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			
+			<label for="">email</label>
+			<input type="text" name="email">
+			<label for="">password</label>
+			<input type="text" name="password">
+			<button>Sign up</button>	
+		</form>	
+		<p>Already have an account ? <a href="/login" class="logIn">log in</a></p>
+
+	</div>
+</div>

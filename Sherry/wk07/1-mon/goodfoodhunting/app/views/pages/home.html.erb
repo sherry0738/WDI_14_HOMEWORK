@@ -1,0 +1,29 @@
+<h1>welcome home</h1>
+
+<a href="/dishes/new">Create new dish</a>
+<a href="/dishes">Post Recent</a>
+
+<h2>Sign up</h2>
+<form action="/signup" method="post">
+	<input type="hidden" name="authenticity_token" value="form_authenticity_token">
+	<label>Name</label>
+	<input type="text" name="name">
+
+	<label>Email</label>
+	<input type="text" name="email">
+
+	<label>Password</label>
+	<input type="password" name="Password">
+</form>
+
+<p>Already have an account ? <a href="/">Log in</a></p>
+
+
+				<h2>Log in</h2>
+				<form action="/session" method="post">			
+					<input type="text" name="email" placeholder="Email">			
+					<input type="password" name="password" placeholder="Password">	
+					<button onclick="failedLogin()" class="login_btn">Log in</button>
+				</form>									
+				<p class="signup">Haven't got account yet? <a href="/signup">Sign up</a></p> 
+

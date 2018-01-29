@@ -23,16 +23,21 @@ cities.forEach(city=> {
  	console.log(parentS);
  });
  
-    var btn = document.createElement("BUTTON");
-    btn.setAttribute("id", "submit-btn");
+var btn = document.createElement("BUTTON");
+	btn.setAttribute("id", "submit-btn");
     btn.setAttribute("onClick", changeClass);
     btn.innerHTML = "Submit";
-    var container = document.querySelector(".container");
-    container.appendChild(btn); 
+// var container = document.querySelector(".container");
+//     container.appendChild(btn); 
+var form = document.getElementsByTagName("form")[0];
+	form.appendChild(btn);
 
 btn.addEventListener("click", changeClass); 
     // try to fix if add btn into form.
     // var form = document.getElementsByTagName("form")[0];
     // form.appendChild(btn);
 
-
+// switch(select.value)
+// case "nyc"
+// document.body.classList.add("austin")
+// break;
