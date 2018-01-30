@@ -1,0 +1,20 @@
+<div>	
+	<% if session[:user_id]  == nil %>
+		<a href="/login" class="logIn">Log in</a>
+		<p class="signup">Haven't got account yet?<a href="/session" class="signUp">  Sign up</a> here</p>
+	<% end %>	
+</div>
+<a href="/projects/new" class="newPost">post a new</a>
+<div class="container"> 
+	<h2>Post Recent:</h2>
+    <% @projects.each do |project| %>
+	  <div class="project">
+	    <a href="/projects/<%= project.id %>">
+	    	<img src="<%= project.preview.url %>" alt="" style="width: 70%">
+	    </a>
+	    <h2><%= project.title %></h2>
+	  </div>
+  	<% end %>
+</div>
+
+  

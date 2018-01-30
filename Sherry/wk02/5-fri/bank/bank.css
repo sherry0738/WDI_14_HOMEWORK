@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+div.smallBoxes {
+    display: inline-block;
+	border: 3px solid black;
+	width: 300px;
+    height: 65px;
+    float: left;
+    margin: 30px;
+}
+
+img {
+    width: 150px;
+    float: left;
+}
+
+#logoBox {
+    display: inline-block;
+	background-color: white;
+    border-style: hidden;
+	  
+}
+
+div#titleBox {
+	background-color: white;
+    border: 1px solid white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+    font-size:30pt;
+    text-transform:uppercase
+}
+
+div.bigBoxes {
+    display: inline-block;
+    border: 3px solid black;
+    width: 300px;
+    height: 300px;    
+    margin: 50px;  
+    padding: 10px 15px;
+   flex-direction: row;
+    justify-content: flex-end;
+    align-items:center; 
+}
+div#savingsBox {
+    display: inline-block;
+    background-color: red;
+    text-align:center;
+  }
+
+div#checkingBox {
+    display: inline-block;
+	background-color: red;
+    text-align: center;
+  }
+p {
+    font-size: 14px;
+  };
+
+.savingBalance {
+    font-size: 26px;
+    margin: 10px;
+}
+.checkingBalance {
+    display: inline-block;
+    font-size: 26px;
+}
+.savingAccEnteredAmount{
+    background-color: lightgreen;
+    height: 45px;
+    width: 220px;
+}
+
+.inputAndBtn {
+    display: inline-block;
+    align-content: stretch;
+}
+
+.checkingAccEnteredAmount
+{
+    background-color: lightgreen;
+    height: 45px;
+    width: 220px;
+}
+
+.button {
+    margin: 40px;
+    font-size: 24px;
+    justify-content: center;
+
+}

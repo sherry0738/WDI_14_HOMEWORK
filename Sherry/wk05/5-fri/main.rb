@@ -7,7 +7,7 @@ require 'httparty'
 
 
 get '/' do
-  @movies = Movie.all
+  @movies = Moviedb.all
   erb :index
 end
 

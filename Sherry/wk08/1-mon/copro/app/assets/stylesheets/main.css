@@ -1,0 +1,73 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.wrapper {
+	width: 300px;
+	position: relative;
+	border: 3px solid black;
+}
+
+.wrapper span {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;  /*drop down along num raining from the corner of right top eg: right:50px; top:50px;*/
+	font-size: 2em;
+
+}
+
+.project {
+	width: 50%;
+	background-color: mistyrose;
+}
+.project h2 {
+	display: none;
+}
+.project img {
+	display: block; /* space under img.*/	
+	/*size: 30%;*/
+}
+
+@media (min-width: 700px) {
+	.project {
+		width: 33.3333% 
+	}
+	.project h2 {
+		display: block;
+	}
+}
+.header {
+	background: rgba(0,0,0, .5);
+  	padding: 40px 0;
+
+}
+.logOut {
+	float: right;
+}
+
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 28px;
+}
+.newPost {
+	font-size: 25px;
+}
+
+.commentShow {
+	display: flex;
+
+  flex-direction:column;
+}
+
+.logIn {
+	color: orange;
+	font-size: 18px;
+}
+.signUp {
+	color: darkblue;
+}
+.comments, p {
+	font-size: 20px;
+}

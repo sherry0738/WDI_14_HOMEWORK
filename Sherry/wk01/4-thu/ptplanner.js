@@ -28,9 +28,9 @@ var lines = new Array (alamein, glenWaverly, sandringham);
 
 var lineOri = "";
 var lineDes = "";
-var userJourney="";
+var userJourney = "";
 
-var indexOri = -1;
+var indexOri = -1;   // 
 var indexRichOri = -1;
 
 var indexDes = -1;
@@ -41,7 +41,7 @@ for (var i = 0; i < lines.length; i++ ) {
   	if(lines[i].indexOf(origin) != -1) {//find out the origin line  		
   		
   		indexOri = lines[i].indexOf(origin);
-  		indexRichOri = lines[i].indexOf("Richmond"); // "Rich" is the destination for the origin line
+  		indexRichOri = lines[i].indexOf("Richmond"); // other way to find out result of the origin/ destination in a line is enclose. "Rich" is the destination for the origin line
   		if(indexOri > indexRichOri) {
    			lines[i] = lines[i].reverse();
    		}
@@ -51,9 +51,9 @@ for (var i = 0; i < lines.length; i++ ) {
 			} else {// if it is empty, then assign lineOri to lines[i][a]
 				lineOri = lines[i][a];
 			}		
-		}  
-  		
+		}  	
   	}
+    
   	if(lines[i].indexOf(destination) !== -1) { // find out the destination line
   		indexDes = lines[i].indexOf(destination);
   		indexRichDes = lines[i].indexOf("Richmond"); // "Rich" if the first stop for the line of indexDes

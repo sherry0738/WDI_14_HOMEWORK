@@ -58,6 +58,10 @@ var checkingWithdraw = function() {
 		}
 	}
 };
+
+// how to identify the problem
+//1. did i selector right elements
+//2. see 
  		//2nd condition----Number(checkingAccEnteredAmount.value) < totalBalance)
 		// &&  remainingAmount <= moneyInSavings)
 		//moneyInChecking = Number(checkingAccEnteredAmount.value) - Number(checkingBalance.textContent);

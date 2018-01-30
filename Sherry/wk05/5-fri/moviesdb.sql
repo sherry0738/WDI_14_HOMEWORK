@@ -1,3 +1,12 @@
+-- CREATE TABLE moviesdb (
+-- 	id SERIAL PRIMARY KEY,
+-- 	title VARCHAR(300),
+-- 	year INTEGER,
+-- 	rate TEXT,
+-- 	image_url VARCHAR(400),	
+-- 	plot TEXT
+-- );
+
 CREATE TABLE moviesdb (
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(300),

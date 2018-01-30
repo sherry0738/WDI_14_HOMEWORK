@@ -30,6 +30,6 @@
 		else guessed_num > rand_num2
 		puts "Wrong, guess lower!"
 		guessed_num = gets.to_i
-	end	
+		end	
 	puts "yeah, you got it. Good job!"
 end

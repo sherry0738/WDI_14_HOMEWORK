@@ -1,0 +1,47 @@
+<h2><%= @project.title %></h2>
+<div class="wrapper">
+	<img src="<%= @project.preview.url %>" alt="" style="width: 30;">
+	<span>&#128525;</span>
+</div>
+<div class="comments">						
+	<% if session[:user_id] == nil %>
+		<span><span class="heartCount"><%= @project.likes.count %></span> likes</span>
+		<p>Want to add your comments ? <a href="/login" class="logIn">Log in</a> here</p>			
+	<% else %>	
+		<a href="/projects/<%= @project.id %>/edit">Edit</a>
+		<form action="/likes" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">	
+			<input type="hidden" name="project_id" value="<%= @project.id %>">  			
+			<span><span class="heartCount"><%= @project.likes.count %></span> likes</span>			
+		</form>
+
+		<form action="/comments" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">		
+			<p>Add comments</p>	
+			<input type="hidden" name="project_id" value="<%= @project.id %>">  		
+			<textarea name="body" id="" cols="40" rows="6"></textarea>
+			<button>Save</button>	
+		</form>			
+	<% end %>
+</div>	
+<div>		
+	<p>Comments:</p>
+	<% @comments.each do |comment| %>
+		<hr>
+		<div class="commentShow">
+			<p><%= comment.body %></p>
+			<p class="com_created">created by <%= comment.user.email %>  at  <%= comment.created_at %></p>
+		</div>
+	<% end %>
+</div>			
+
+<script>
+	console.log("ready for copro");
+	var loveFace = document.querySelector(".wrapper");		
+        loveFace.addEventListener('click', function(event){
+    		var heartCount = document.querySelector(".heartCount");
+    			heartCount.textContent = Number(heartCount.textContent) + 1 ;
+     }); 
+		
+</script>
+

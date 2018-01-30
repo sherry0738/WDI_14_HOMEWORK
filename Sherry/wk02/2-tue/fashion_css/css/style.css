@@ -1,8 +1,29 @@
+* {
+	box-sizing: border-box;
+}
+ 
 ul {
 	text-decoration-color: white;
-      padding: 10px;
-      background: white;
+    padding: 10px;
+    background: white;
+
 }
+
+
+/* nav ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 0
+	margin-top:0;
+}
+
+
+//nav li {
+	flex: 1
+	flex-grow:1;
+}
+*/
+
 .menu li{
 	border-right: 1px solid white;
 	font-size: 25px;
@@ -13,7 +34,6 @@ ul {
 }
 .menu li a {
 	color: white;
-
    	text-decoration: none;
 } 
 
@@ -21,9 +41,9 @@ li {
 	border-right: 1px solid white;
 	font-size: 15px;
 	text-decoration-color: white;
-    padding: 0px 10px 0px 10px;
-    
+    padding: 0px 10px 0px 10px; 
    	text-decoration: none;
+   	//display: inline;
 }
 main {
 	font-family: 'Allerta', sans-serif;
@@ -33,6 +53,7 @@ main {
   	background-color: white;
   	width: 55%;
   	margin: 0 50px 0 50px;
+
 }
 
 aside {
@@ -43,12 +64,15 @@ aside {
   	background-color: white;
   	width: 27%;
   	float: right;
+  	color: darkgrey;
+  	margin-right: 60px;
 }
 p {
 
 }
-.sitetitle{
+.sitetitle {
 	margin: 0 50px 0 50px;
+	display: inline
 }
 .firstcharacter {
 	color: lightgrey;
@@ -66,7 +90,7 @@ h2 {
 h3 {
 	color: darkgrey;
 }
-img{
+img {
 	width: 100%;
 	height: 100%;
 }
@@ -104,7 +128,7 @@ article > footer {
   border-bottom: 1px solid black;	
 }
 footer {
-	height: 30px;
+	height: 50px;
 	color: lightgrey;
 }
 

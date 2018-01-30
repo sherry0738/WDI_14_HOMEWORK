@@ -1,0 +1,10 @@
+given a word 
+
+i want to count the occurence of each letter
+
+eg 'apple'
+
+'a' : 1
+'b' : 2
+'c' : 1
+'d' : 1
