@@ -1,0 +1,15 @@
+<h2>Add your pokemons</h2>
+
+
+<form action="/pokemons" method="post">
+	
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label for="">Species</label>
+	<input type="text" name="species">
+
+	<label for="">img_url</label>
+	<input type="text" name="img_url">
+	
+	<button>Add</button>
+	
+</form>

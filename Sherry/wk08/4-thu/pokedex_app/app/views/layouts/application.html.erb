@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PokedexApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Pokemons Station</h1>
+      <div class="nav">
+        <a href="/">Home</a>  |
+        <a href="/pokemons/new">Add New</a>  |
+        <a href="/pokemons">Recent Post </a>
+      </div>
+      <div class="logOut">
+        <% if session[:user_id] %>
+          <p class="loggedin_msg">logged in as <%= User.find(session[:user_id]).email %></p>          
+          <form action="/session" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="_method" value="delete">
+            <button class="logout_btn">logout</button>  
+          </form>     
+        <% end %>
+      </div>
+
+    </header>
+    <%= session[:user_id] %>
+    <%= yield %>
+  </body>
+</html>

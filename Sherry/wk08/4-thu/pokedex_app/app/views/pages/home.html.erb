@@ -1,0 +1,23 @@
+
+<h2>Welcome to Pokemon World</h2>
+<div>	
+	<% if session[:user_id]  == nil %>
+		<a href="/login" class="logIn">Log in</a>
+		<p class="signup">Haven't got account yet?<a href="/session" class="signUp">  Sign up</a> here</p>
+	<% end %>	
+</div>
+
+  <div class="container">
+	<h2>Recent Post :</h2>
+	<div class="wrapper">
+		<% @pokemons.each do |pokemon| %>
+			<div>
+				<a href="/pokemons/<%= pokemon.id %>"><%= pokemon.nickname %></a>
+			</div>
+			<div>
+				<img src="<%= pokemon.img_url %>" alt="" style="width: 50%" >
+			</div>
+
+		<% end %>
+	</div>
+</div>

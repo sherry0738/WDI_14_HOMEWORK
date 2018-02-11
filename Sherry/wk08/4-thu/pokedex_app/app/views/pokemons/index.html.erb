@@ -1,0 +1,14 @@
+<div class="container">
+	<h2>Recent Post :</h2>
+	<div class="wrapper">
+		<% @pokemons.each do |pokemon| %>
+			<div>
+				<a href="/pokemons/<%= pokemon.id %>"><%= pokemon.nickname %></a>
+			</div>
+			<div>
+				<img src="<%= pokemon.img_url %>" alt="" style="width: 50%">
+			</div>
+
+		<% end %>
+	</div>
+</div>

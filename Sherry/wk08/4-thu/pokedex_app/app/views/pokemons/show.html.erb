@@ -1,0 +1,18 @@
+
+<div class="eachPoke">
+	<h2><%= @pokemon.nickname %></h2>
+	<img src="<%= @pokemon.img_url %>" alt="">
+	<p>Species : <%= @pokemon.species %></p> 
+	<p>Ability : <%= @pokemon.ability %></p>
+	<p>Level : <%= @pokemon.level %></p>
+	<p>Created at <%= @pokemon.created_at %></p>
+	<p>Updated at <%= @pokemon.updated_at %></p>
+</div>
+
+<a href="/pokemons/<%= @pokemon.id %>/edit">Edit</a>
+
+<form action="/pokemons/<%= @pokemon.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+	<button>Delete</button>	
+</form>

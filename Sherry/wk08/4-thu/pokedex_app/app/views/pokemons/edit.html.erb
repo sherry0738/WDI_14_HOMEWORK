@@ -1,0 +1,38 @@
+
+<div class="editBox">
+	<h2>Update for "<%= @pokemon.nickname %> "</h2>
+
+	<form action="/pokemons/<%= @pokemon.id %>" method="post">	
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="_method" value="patch">
+		
+		<div class="eachEdit">
+			<label for="">nickname : </label>
+			<input class="eachInput" type="text" name="nickname" value="<%= @pokemon.nickname %>">
+		</div>
+		
+		<div class="eachEdit" >
+			<label for="">img_url : </label>
+			<input class="eachInput" id="imgInput" type="text" name="img_url" value="<%= @pokemon.img_url %>">
+		</div>
+
+		<div class="eachEdit">
+		<label for="">Species : </label>
+		<input class="eachInput" type="text" name="species" value="<%= @pokemon.species %>">
+		</div>
+
+		<div class="eachEdit">
+		<label for="">Ability : </label>
+		<input class="eachInput" type="text" name="ability" value="<%= @pokemon.ability %>">
+		</div>
+
+		<div class="eachEdit">
+		<label for="">Level : </label>
+		<input class="eachInput" type="text" name="level" value="<%= @pokemon.level %>">
+		</div>
+
+		<button class="updateBtn">Update</button>
+
+	</form>
+</div>
+

@@ -1,6 +1,5 @@
 console.log("here we go!");
 
-
 var $inputBox = $('.inputBox');
 var $container = $('.container');
 
@@ -15,59 +14,70 @@ var $btn = $("<button>");
 	$btn.addClass("searchBtn");
 	$inputBox.append($btn);
 
-	$btn.click(function(){
-
-		var inputValue = $("input").val(); 
-		var options = {url: `http://www.omdbapi.com/?apikey=2f6435d9&s=${inputValue}`};//method: 'get' //default		
-		$.ajax(options).done(function(res) {
-			$container.empty();
-			res.Search.forEach(function(movie) {		
-
-				var newDiv = $("<div>");
+$btn.click(function(){
+	var inputValue = $("input").val(); 
+	var options = {url: `http://www.omdbapi.com/?apikey=2f6435d9&s=${inputValue}`};//method: 'get' //default		
+	$.ajax(options).done(function(res) {
+		$container.empty();
+		res.Search.forEach(function(movie) {		
+			var newDiv = $("<div>");
 				newDiv.addClass("wrapper");
-				var newH2 = $("<h2>");
-				var img = $("<img>");
-
-				newH2.text(movie.Title + " (" + movie.Year + ")");
-				newDiv.append(newH2);
+			var newAnchor = $("<a>");
+				newAnchor.attr("href",`http://www.omdbapi.com/?apikey=2f6435d9&t=${movie.Title}`);
+				newAnchor.text(movie.Title + " (" + movie.Year + ")");								
+				newDiv.append(newAnchor);
+			var img = $("<img>");	
 				img.attr("src", movie.Poster);	
 				newDiv.append(img);
-
 				$container.append(newDiv);
+		});		
+	});		
+});
+				
+			
+		// if $(event.target).html(detailShow());		
+		// 	function detailShow() {
+		// 		$container.empty();
+		// 		console.log("detailS start");
+		// 		var showDiv = $("<div>");
+		// 			showDiv.addClass("showDetail");
+		// 		var showImg = $("<img>");	
+		// 			showImg.attr("src", movie.Poster);	
+		// 			showDiv.append(showImg);
 
-			});
-			console.log("the end");
-		});
-		console.log("go through...");
-	});
+		// 		console.log("detailS 2");
+		// 		var movieDetails = [{text:"Title"},
+		// 							{text:"Year"},
+		// 							{text:"Rated"},
+		// 							{text:"Released"},
+		// 							{text:"Runtime"},
+		// 							{text:"Genre"},
+		// 							{text:"Director"},
+		// 							{text:"Actors"},
+		// 							{text:"Plot",}];
+
+		// 		console.log("detailS 3");
+		// 		movieDetails.forEach(function(detail) {
+		// 			var	showP = $("<p>");
+
+		// 		console.log("detailS 4");
+		// 			showP.text(detail.text + " : " + movie.Rated);
+		// 			showP.text(detail.text + " : " + movie.Released);					
+		// 			showP.text(detail.text + " : " + movie.Runtime);
+		// 			showP.text(detail.text + " : " + movie.Genre);
+		// 			showP.text(detail.text + " : " + movie.Director);
+		// 			showP.text(detail.text + " : " + movie.Actors);
+		// 			showP.text(detail.text + " : " + movie.Plot);
+
+		// 		console.log("detailS 5");
+		// 			$container.append(showP);
+		// 			console.log($container);
+		// 		});
+		// 	};
+				
+
+		
 
 
-// $("<div><p><img>")
-		// var $mainContainer = $("<div></div>")
-		// 					$("<p>movie.Title</p>")
-		// 					$("<p>movie.Year</p>")
-		// 					$("<img src="movie.Poster">")
-		//$container.append($mainContainer);
-
-
-
-//$form.attr("action", "search");
-
-// using s=jaws to request a list of movies
-// use javascript dom vreation to show it in the page wrapped in paragraphs for each movie.
-
-
-// var options = {
-// 	url: 'http://www.omdbapi.com/?apikey=2f6435d9&t=jaws'
-// };
-// $.ajax(options).done(function(res) {
-	
-// 	console.log('me me'); // IOC (version controll)
-// });
-// console.log('this one comes first');
-// XHR finished loading: GET
-
-// var $result = $p.text($getData.responseText);
- 
 
 
