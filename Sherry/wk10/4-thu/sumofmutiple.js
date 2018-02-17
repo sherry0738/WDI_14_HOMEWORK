@@ -9,21 +9,39 @@
 
 // Write the program in javascript with nodejs.
 
-// $ node sumOfMultiples 10
+// $ node sumOfMultiples.js 9
 // $ 23
+// $ node sumOfMultiples.js 5
+// $ 8
 
+// var _ = require('underscore');
 
-var sum = 0;
+var givenNum = process.argv[2];
+var arr = [];
 
-function sumOfMultiples(num) {
-	for(var i = 0; i < num; i++) {
+	for(var i = 1; i <= givenNum; i++) {
 		if (i % 3 === 0 || i % 5 === 0) {
-			sum += i;
+			arr.push(i);
+		 }
 	}
-	}
+	//console.log(arr);
+	var sum = 0;
+	arr.forEach(function(num) {
+		 sum += num;
+	});	
 	console.log(sum);
-};
-		
-sumOfMultiples(10);
+			
+// var findNums = _.filter(numbers, function(num) {
+// 			return num % 3 === 0 || num % 5 === 0; });
 
+// var sum = _.reduce(findNums, function(memo, i) {
+// 	return memo + i; }, 0);
+		
+// 			//sum += i;
 	
+// console.log(findNums);
+// console.log(sum);
+	
+
+
+
