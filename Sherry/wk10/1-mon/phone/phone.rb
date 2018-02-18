@@ -17,76 +17,32 @@
 #   skip
 #   assert_equal 1, "1".to_i
 # end
-
-
 class Phone
   def initialize(inputnum)
     @number = inputnum
-    @area_code = inputnum
   end
 
-# ------line 9 -----------
-  # def number
-  # 	@number.gsub(/[\s()-.]/, "")
-  	
-  # end
+  def number
+    return "0000000000" if @number.length == 11 && @number[0] != "1"  
+    return "0000000000" if @number.length < 10 
 
-
-# ------line 9/15/21-----------
-  #   if @number.length == 11 && @number[0] == "1" 
-  #   @number[0] = ""
-  #   return @number.gsub(/[\s()-.]/, "")
-  #   end
-
-  # end
-
-# ------line 27 -----------
- #  def number
- #  	if @number.length == 11 && @number[0] != "1"
-  	
- #  		@number[0] = ""
- #  		@number = @number.chars
-
- #  	end	
-	# if @number.include?("0") == true
- #  		@zero = @number.index("0") 
- #  		return
- #  		@number[@zero] * 10
- #  	end
- #  end
-
-# ------line 27 -----------
-	# def number
- #  	 if @number.length == 11 && @number[0] != "1"
- #  	 	@number[0] = ""
- #  	 	 @number = "0000000000"
- #  	 	 return @number
- #  	 end
- #  	end
-
-# ------line 32 -----------
-	def number
-		return "0000000000" if @number.length < 10 == true	
-  	end
+  	@number = @number.gsub(/[\s()-.]/, "")
+      if @number.length == 11 && @number[0] == "1" 
+        @number[0] = ""
+        @number = @number.gsub(/[\s()-.]/, "")
+      end
+      
+    return @number 
   end
 
+  def area_code
+    @number.split(//).slice(0..2).join('')
+  end
 
-# ------line 38 -----------
-	# def area_code
-
-	# 	@arr = @number.split(//)
-	# 	@area_code = []
-	# 	@area_code = @area_code.push(@arr[0],@arr[1], @arr[2]).join
-		
-	# end
-
-# ------line 44 -----------
-
-	def number
-		
-	end
-
-
+  def to_s
+    return "(#{$1}) #{$2}-#{$3}" if @number =~ /^(\d{3})(\d{3})(\d{4})$/    
+  end
+end
 
 
 
